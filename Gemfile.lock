@@ -1,3 +1,30 @@
+GIT
+  remote: https://github.com/spree-contrib/spree_globalize.git
+  revision: b03c2f4b8c07c60302be3d42b04563e65520b051
+  specs:
+    spree_globalize (3.4.0)
+      friendly_id-globalize
+      globalize
+      i18n_data
+      kaminari-i18n
+      rails-i18n
+      spree_core (>= 3.1.0, < 5.0)
+      spree_extension
+      spree_i18n
+
+GIT
+  remote: https://github.com/spree-contrib/spree_i18n.git
+  revision: 4d715d98c8ee17fe2d7d568a367e274aab2a62f5
+  specs:
+    spree_i18n (3.3.2)
+      deface (~> 1.0)
+      i18n_data
+      kaminari-i18n
+      rails-i18n
+      routing-filter
+      spree_core (>= 3.1.0, < 5.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -124,12 +151,19 @@ GEM
     ffi (1.11.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha3)
+      friendly_id (>= 5.2.0, < 6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    globalize (5.3.0)
+      activemodel (>= 4.2, < 6.1)
+      activerecord (>= 4.2, < 6.1)
+      request_store (~> 1.0)
     highline (2.0.2)
     htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.10.0)
     io-like (0.3.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -151,6 +185,9 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -222,6 +259,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.3)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
@@ -239,9 +279,14 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    routing-filter (0.6.2)
+      actionpack (>= 4.2, < 6)
+      activesupport (>= 4.2, < 6)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass (3.7.4)
@@ -401,6 +446,8 @@ DEPENDENCIES
   spree (~> 3.7.0)
   spree_auth_devise (~> 3.5)
   spree_gateway (~> 3.4)
+  spree_globalize!
+  spree_i18n!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
