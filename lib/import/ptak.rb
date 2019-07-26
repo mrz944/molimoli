@@ -33,7 +33,7 @@ module Import
 
               name = n.css('name').text
               product = Spree::Product.where(name: name).first_or_create! do |p|
-                p.price = n.css('price').text.to_f * 3.33
+                p.price = n.css('price').text.to_f * 3.33 * 1.23
                 desc = n.css('description').text.strip_html_tags
                 desc = name if desc.blank?
                 p.description = desc
