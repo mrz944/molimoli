@@ -16,7 +16,7 @@ module Import
       no_cat = []
       no_color = []
       no_size = []      
-      Nokogiri::XML(open 'http://ptakmodahurt.pl/xmlfiles/products.xml').css('//product').first(200).each do |n|
+      Nokogiri::XML(open 'http://ptakmodahurt.pl/xmlfiles/products.xml').css('//product').each do |n|
       # Nokogiri::XML(open Rails.root.join('products.xml')).css('//product').first(20).each do |n|
         begin
           external_id = n.css('ean13').text
