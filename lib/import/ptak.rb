@@ -33,7 +33,7 @@ module Import
 
               name = n.css('name').text
               product = Spree::Product.where(name: name).first_or_create! do |p|
-                p.price = n.css('price').text.to_f * 3.33 * 1.23
+                p.price = (n.css('price').text.to_f * 3.33 * 1.23).ceil
                 desc = n.css('description').text.strip_html_tags
                 desc = name if desc.blank?
                 p.description = desc
@@ -124,10 +124,10 @@ module Import
             variant = Spree::Variant.where(product_id: variant_params[:product].id, sku: variant_params[:sku]).first
             variant = Spree::Variant.create!(variant_params) unless variant
 
-            # product.master.update!({
-            #   sku: 'SPR-00012',
-            #   cost_price: 21
-            # })
+            product.master.update!({
+              sku: n.css('reference').text,
+              cost_price: n.css('price').text.to_f
+            })
 
 
             ## Spree::Sample.load_sample('stock')
