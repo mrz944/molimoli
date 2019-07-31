@@ -9,4 +9,5 @@ pl:
     login_as_existing: Zaloguj się na MoliMoli
     new_customer: Nowe konto
     save_my_address: Zapisz mój adres
+    shipment_details: 'Z %{stock_location} przez %{shipping_method}'
     shipping_total: Koszt wysyłki
