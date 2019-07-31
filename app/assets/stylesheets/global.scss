@@ -483,7 +483,8 @@ table.table-striped {
 @media (max-width: $tablet) {
   #products {
     .product-list-item {
-      min-width: 230px;
+      width: calc(50% - 20px);
+      min-width: unset;
     }
   }
   .line-item-description {
