@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag 'default.manifest.css' %>
     <%= javascript_include_tag 'default.manifest.js' %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" controller_name="<%= controller_name %>" action_name="<%= action_name %>" data-hook="body">
     <%= flash_messages %>
 
     <%# TODO: check render scripts %>
