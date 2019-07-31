@@ -45,6 +45,7 @@ gem 'spree_gateway', '~> 3.4'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 gem 'spree_payu_integration', github: 'netguru/spree_payu_integration', branch: '3-0-stable'
 
 gem 'aws-sdk-s3', require: false

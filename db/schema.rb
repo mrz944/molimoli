@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_233448) do
+ActiveRecord::Schema.define(version: 2019_07_31_103253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -391,6 +391,52 @@ ActiveRecord::Schema.define(version: 2019_07_25_233448) do
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
   end
 
+  create_table "spree_page_translations", force: :cascade do |t|
+    t.integer "spree_page_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "body"
+    t.string "slug"
+    t.string "foreign_link"
+    t.string "meta_keywords"
+    t.string "meta_title"
+    t.string "meta_description"
+    t.string "layout"
+    t.index ["locale"], name: "index_spree_page_translations_on_locale"
+    t.index ["spree_page_id"], name: "index_spree_page_translations_on_spree_page_id"
+  end
+
+  create_table "spree_pages", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "show_in_header", default: false, null: false
+    t.string "foreign_link"
+    t.integer "position", default: 1, null: false
+    t.boolean "visible", default: true
+    t.string "meta_keywords"
+    t.string "meta_description"
+    t.string "layout"
+    t.boolean "show_in_sidebar", default: false, null: false
+    t.string "meta_title"
+    t.boolean "render_layout_as_partial", default: false
+    t.boolean "show_in_footer", default: false, null: false
+    t.index ["slug"], name: "index_spree_pages_on_slug"
+  end
+
+  create_table "spree_pages_stores", id: false, force: :cascade do |t|
+    t.integer "store_id"
+    t.integer "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_spree_pages_stores_on_page_id"
+    t.index ["store_id"], name: "index_spree_pages_stores_on_store_id"
+  end
+
   create_table "spree_payment_capture_events", id: :serial, force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2, default: "0.0"
     t.integer "payment_id"
@@ -432,6 +478,18 @@ ActiveRecord::Schema.define(version: 2019_07_25_233448) do
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
+  end
+
+  create_table "spree_paypal_express_checkouts", id: :serial, force: :cascade do |t|
+    t.string "token"
+    t.string "payer_id"
+    t.string "transaction_id"
+    t.string "state", default: "complete"
+    t.string "refund_transaction_id"
+    t.datetime "refunded_at"
+    t.string "refund_type"
+    t.datetime "created_at"
+    t.index ["transaction_id"], name: "index_spree_paypal_express_checkouts_on_transaction_id"
   end
 
   create_table "spree_preferences", id: :serial, force: :cascade do |t|
