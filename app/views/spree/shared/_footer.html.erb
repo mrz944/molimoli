@@ -34,8 +34,8 @@
               <span>O nas</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">O firmie</a></li>
-              <li><a href="javascript:void(0);">Kontakt i dane firmy</a></li>
+              <li><a href="/o-firmie">O firmie</a></li>
+              <!-- <li><a href="javascript:void(0);">Kontakt i dane firmy</a></li> -->
             </ul>
           </div>
           <div class="col-sm-3">
@@ -43,11 +43,11 @@
               <span>Pomoc</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">Metody Płatności</a></li>
-              <li><a href="javascript:void(0);">Czas i koszty dostawy</a></li>
-              <li><a href="javascript:void(0);">Zwroty i reklamacje</a></li>
-              <li><a href="javascript:void(0);">Regulamin</a></li>
-              <li><a href="javascript:void(0);">Polityka Prywatności</a></li>
+              <li><a href="/metody-platnosci">Metody Płatności</a></li>
+              <li><a href="/dostawa">Czas i koszty dostawy</a></li>
+              <li><a href="/zwroty-i-reklamacje">Zwroty i reklamacje</a></li>
+              <li><a href="/regulamin">Regulamin</a></li>
+              <li><a href="/polityka-prywatnosci">Polityka Prywatności</a></li>
             </ul>
           </div>
           <div class="col-sm-3">
@@ -55,8 +55,8 @@
               <span>Moje konto</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">Zamówienia</a></li>
-              <li><a href="javascript:void(0);">Moje dane</a></li>
+              <li><%= link_to 'Zamówienia', account_path %></li>
+              <li><%= link_to 'Moje dane', edit_account_path %></li>
             </ul>
           </div>
           <div class="col-sm-3">
@@ -64,7 +64,7 @@
               <span>Kontakt</span>
             </h3>
             <ul class="footer-nav">
-              <li><a href="javascript:void(0);">info@molimoli.pl</a></li>
+              <li><a href="mailto:info@molimoli.pl">info@molimoli.pl</a></li>
             </ul>
           </div>
         </div>
