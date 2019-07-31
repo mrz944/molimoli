@@ -1,0 +1,11 @@
+pl:
+  spree:
+    adjustment_labels:
+      tax_rates:
+        including_tax: 'Zawiera podatek %{name} %{amount}'
+        excluding_tax: 'Nie zawiera podatku %{name} %{amount}'
+    cart_subtotal: Suma
+    coupon_code_apply: Zatwierdź
+    login_as_existing: Zaloguj się na MoliMoli
+    new_customer: Nowe konto
+    save_my_address: Zapisz mój adres

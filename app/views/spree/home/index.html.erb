@@ -16,8 +16,8 @@
     <%= render partial: 'spree/shared/taxonomies' %>
   </div>
 <% end %>
-<div class="text-center common-heading">Today's Featured Collections</div>
-<div class="text-center common-subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+<div class="text-center common-heading">Produkty wybrane dla Ciebie</div>
+<div class="text-center common-subheading">Sprawdź co dla Ciebie przygotowaliśmy</div>
 <div data-hook="homepage_products" class="homepage_products">
   <% cache(cache_key_for_products) do %>
     <%= render partial: 'spree/shared/products', locals: { products: @products } %>
