@@ -6,24 +6,18 @@ module Import
     def import_product_feed(id = nil)
       errors = []
       external_ids = []
-      copy_params = []
-      copy_ids = []
-      image_params = {}
-      image_ids = []
       external_id = nil
       product = nil
       not_persisted = []
       no_cat = []
       no_color = []
-      no_size = []      
+      imported_count = 1
       Nokogiri::XML(open 'http://ptakmodahurt.pl/xmlfiles/products.xml').css('//product').each do |n|
       # Nokogiri::XML(open Rails.root.join('products.xml')).css('//product').first(20).each do |n|
         begin
           external_id = n.css('ean13').text
           next if id && id != external_id
           if !n.previous_element || (external_id != n.previous_element.css('ean13').text)
-            copy_params = []
-            image_params = {}
             product = nil
             if cat = map_category(n.css('category_default_name').text)
               ## Spree::Sample.load_sample('products')
@@ -146,11 +140,15 @@ module Import
                 variant.images.create!(attachment: { io: file, filename: filename })
               end
             end
+
+            puts "#{imported_count}: #{n.css('reference').text}_#{size}_#{color}"
+            imported_count += 1
           else
             no_color << n.css('Attribute_Color').text unless no_cat.include?(n.css('Attribute_Color').text)
           end
         rescue Exception => e
           errors << [external_id, e].join('-')
+          puts [external_id, e].join('-')
         end
       end
     end
