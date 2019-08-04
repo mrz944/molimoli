@@ -15,11 +15,11 @@
           </div>
         </div>
 
-        <div data-hook="product_properties">
+        <div data-hook="product_properties" class="hidden-xs">
           <%= render partial: 'properties' %>
         </div>
 
-        <div data-hook="promotions">
+        <div data-hook="promotions"  class="hidden-xs">
           <%= render partial: 'promotions' %>
         </div>
       </div>
@@ -37,6 +37,14 @@
           <div id="cart-form" data-hook="cart_form">
             <%= render partial: 'cart_form' %>
           </div>
+        </div>
+
+        <div data-hook="product_properties" class="hidden-lg hidden-md hidden-sm visible-xs">
+          <%= render partial: 'properties' %>
+        </div>
+
+        <div data-hook="promotions" class="hidden-lg hidden-md hidden-sm visible-xs">
+          <%= render partial: 'promotions' %>
         </div>
 
         <div id="taxon-crumbs" class=" five " data-hook="product_taxons">

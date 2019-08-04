@@ -1,0 +1,13 @@
+pl:
+  spree:
+    adjustment_labels:
+      tax_rates:
+        including_tax: '%{name}'
+        excluding_tax: '%{name}'
+    cart_subtotal: Suma
+    coupon_code_apply: Zatwierdź
+    login_as_existing: Zaloguj się na MoliMoli
+    new_customer: Nowe konto
+    save_my_address: Zapisz mój adres
+    shipment_details: 'Z %{stock_location} przez %{shipping_method}'
+    shipping_total: Koszt wysyłki

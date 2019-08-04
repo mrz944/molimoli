@@ -48,6 +48,8 @@ gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 gem 'spree_payu_integration', github: 'netguru/spree_payu_integration', branch: '3-0-stable'
 
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
+
 gem 'aws-sdk-s3', require: false
 
 group :development, :test do
