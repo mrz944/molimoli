@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  default_url_options Rails.application.config.action_mailer.default_url_options
 end

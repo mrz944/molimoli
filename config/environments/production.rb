@@ -63,6 +63,11 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "molimoli_#{Rails.env}"
 
+  config.action_mailer.default_url_options = {
+    protocol: 'https',
+    host: 'www.molimoli.pl'
+  }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
