@@ -34,7 +34,7 @@ module Export
                     xml['g'].size_system 'EU'
                     xml['g'].age_group 'adult'
                     xml['g'].gender 'female'
-                    xml['g'].brand 'Ptak'
+                    xml['g'].brand 'MoliMoli'
                     xml['g'].google_product_category google_category
                     xml['g'].product_type category.name
                   }
@@ -50,16 +50,31 @@ module Export
       puts "Errors:"
       errors.map{ |error| puts error }
 
-      io = StringIO.new
-      io.write builder.to_xml
-      io.rewind
+      # io = StringIO.new
+      # io.write builder.to_xml
+      # io.rewind
 
-      blob = ActiveStorage::Blob.create_after_upload!(
-        io: io,
-        filename: 'gmc.xml',
-        content_type: 'text/xml'
+      # blob = ActiveStorage::Blob.create_after_upload!(
+      #   io: io,
+      #   filename: 'gmc.xml',
+      #   content_type: 'text/xml'
+      # )
+      # url_for(blob)
+
+      file = Tempfile.new('gmc.xml')
+      file.write builder.to_xml
+      file.rewind
+      file.close
+
+      s3 = Aws::S3::Resource.new(
+        access_key_id: ENV['BUCKETEER_AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'],
+        region: ENV['BUCKETEER_AWS_REGION']
       )
-      url_for(blob)
+      obj = s3.bucket(ENV['BUCKETEER_BUCKET_NAME']).object('feeds/gmc.xml')
+      obj.upload_file(file, { acl: 'public-read' })
+      file.unlink
+      obj.public_url
     end
 
     private

@@ -52,7 +52,7 @@ gem 'spree_payu_integration', github: 'netguru/spree_payu_integration', branch: 
 
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
