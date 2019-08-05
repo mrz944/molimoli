@@ -48,6 +48,11 @@
             <label>
               <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
               <span><%= Spree.t(method.name, scope: :payment_methods, default: method.name) %></span>
+              <% if method.name == 'Karta' %>
+                <div><%= image_tag('https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png') %></div>
+              <% elsif method.name == 'PayPal' %>
+                <div><%= image_tag('https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-medium.png') %></div>
+              <% end %>
             </label>
           </div>
         </li>
@@ -64,14 +69,14 @@
       <% end %>
     </ul>
 
-    <p class='field' data-hook='coupon_code'>
+<!--     <p class='field' data-hook='coupon_code'>
       <%= form.label :coupon_code %>
       <%= form.text_field :coupon_code, class: 'form-control' %>
-    </p>
+    </p> -->
   </div>
 </div>
 
-<div class="well text-right form-buttons" data-hook="buttons">
+<!-- <div class="well text-right form-buttons" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
   <script>Spree.disableSaveOnClick();</script>
-</div>
+</div> -->
