@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   default_url_options Rails.application.config.action_mailer.default_url_options
+
+  get 'feeds/gmc.xml', to: redirect('https://molimoli-production.s3.eu-central-1.amazonaws.com/feeds/gmc.xml')
 end
