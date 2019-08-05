@@ -12,7 +12,7 @@ module Export
                 v = p.variants.first
                 if v
                   link = "https://www.molimoli.pl#{Spree::Core::Engine.routes.url_helpers.product_path p}"
-                  image = url_for(v.images.first.url(:product))
+                  image = url_for(v.images.first.url(:large))
                   category = p.taxons.find_by(parent: Spree::Taxon.find_by(name: 'Kategorie'))
                   color = v.option_values.find_by(option_type: Spree::OptionType.find_by(presentation: 'Kolor')).presentation
                   size = v.option_values.find_by(option_type: Spree::OptionType.find_by(presentation: 'Rozmiar')).presentation
@@ -64,7 +64,6 @@ module Export
       file = Tempfile.new('gmc.xml')
       file.write builder.to_xml
       file.rewind
-      file.close
 
       s3 = Aws::S3::Resource.new(
         access_key_id: ENV['BUCKETEER_AWS_ACCESS_KEY_ID'],
