@@ -45,7 +45,7 @@ gem 'spree_gateway', '~> 3.4'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 
-gem 'spree_analytics_trackers', '~> 1.0'
+# gem 'spree_analytics_trackers', '~> 1.0'
 
 # gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 
