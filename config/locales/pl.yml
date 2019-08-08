@@ -8,6 +8,41 @@ pl:
     coupon_code_apply: Zatwierdź
     login_as_existing: Zaloguj się na MoliMoli
     new_customer: Nowe konto
+    order_mailer:
+      subtotal: ! 'Podsuma:'
+      total: ! 'Suma:'
+      cancel_email:
+        dear_customer: Szanowny Kliencie,
+        instructions: Twoje zamówienie zostało anulowane. Zachowaj na wszelki wypadek tę infromację.
+        order_summary_canceled: 'Podsumowanie zamówienia %{number} [ANULOWANO]'
+        subject: Anulowanie zamówienia
+      confirm_email:
+        dear_customer: Szanowny Kliencie,
+        instructions: Zachowaj na wszelki wypadek tę infromację.
+        order_summary: 'Podsumowanie zamówienia %{number}'
+        subject: Potwierdzenie zamówienia
+        thanks: Dziękujemy za zamówienie.
+    reimbursement_mailer:
+      reimbursement_email:
+        days_to_send: ! 'Pozostało ci %{days} dni na odesłanie produktów do zwrotu.'
+        dear_customer: Szanowny Kliencie,
+        exchange_summary: Podsumowanie zwrotu
+        for: za
+        instructions: Zajmujemy się wrotem twojego zamówienia.
+        refund_summary: Podsumowanie zwrotu
+        subject: Zwrot zamówienia
+        total_refunded: ! 'Suma zwrotu: %{total}'
+        thanks: Dziękujemy za zamówienie.
     save_my_address: Zapisz mój adres
     shipment_details: 'Z %{stock_location} przez %{shipping_method}'
+    shipment_mailer:
+      shipped_email:
+        dear_customer: Szanowny Kliencie,
+        instructions: Twoje zamówienie %{number} zostało wysłane
+        shipment_summary: Podsumowanie wysyłki
+        shipping_method: 'Metoda wysyłki: %{shipping_method}'
+        subject: Wysyłka zamówienia
+        thanks: Dziękujemy za zamówienie.
+        track_information: ! 'Śledzenie zamówienia: %{tracking}'
+        track_link: 'Link do trackingu: %{url}'
     shipping_total: Koszt wysyłki

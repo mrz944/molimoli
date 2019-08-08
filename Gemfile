@@ -47,6 +47,8 @@ gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 
 gem 'spree_analytics_trackers', '~> 1.0'
 
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
+
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 gem 'spree_payu_integration', github: 'netguru/spree_payu_integration', branch: '3-0-stable'
 
